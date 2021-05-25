@@ -1,0 +1,312 @@
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `anime`
+--
+
+DROP TABLE IF EXISTS `anime`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `anime` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `anime_type_id` bigint(20) unsigned NOT NULL,
+  `translators_id` bigint(20) unsigned NOT NULL,
+  `country` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `anime_name` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `number_of_episodes` bigint(20) DEFAULT NULL,
+  `description_of_anime` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `anime_type_id` (`anime_type_id`),
+  KEY `translators_id` (`translators_id`),
+  CONSTRAINT `anime_ibfk_1` FOREIGN KEY (`anime_type_id`) REFERENCES `anime_type` (`id`),
+  CONSTRAINT `anime_ibfk_2` FOREIGN KEY (`translators_id`) REFERENCES `translators` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='аниме';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `anime`
+--
+
+LOCK TABLES `anime` WRITE;
+/*!40000 ALTER TABLE `anime` DISABLE KEYS */;
+INSERT INTO `anime` VALUES (1,1,1,'Djibouti','qui',5,'Quia voluptatum omnis totam ducimus ipsam et repellendus asperiores. Deleniti aut sunt voluptatem aspernatur. Et expedita ab voluptas ipsum saepe fugit expedita. Est suscipit eos enim quos impedit sed dolorum. Sint iusto sed sint est sequi.','1971-03-27 04:12:11'),(2,2,2,'Bhutan','maiores',3,'Voluptas autem possimus ad et. Culpa et ad consectetur error possimus dicta. Reprehenderit saepe a sapiente nemo ullam iusto distinctio harum.','2018-12-27 15:48:51'),(3,3,3,'Western Sahara','reiciendis',7,'Quas sed fugiat ullam adipisci at eaque error alias. Hic reprehenderit et et consequuntur id rem et.','2014-07-25 13:55:09'),(4,4,1,'Jamaica','ut',2,'Eos voluptas et ullam qui est est. Nisi iure magni dolores rerum qui quaerat. Tenetur sint molestiae quos sint eligendi placeat.','1985-11-05 02:51:32'),(5,5,2,'Bolivia','nihil',6,'Consequuntur optio aliquid aut omnis ea quos doloribus. Magni consequuntur sint iste ab tenetur. Cupiditate beatae facilis earum et. At at itaque aliquam nihil dolores.','1979-05-12 15:36:03'),(6,1,3,'Pakistan','cum',6,'Quo ut aut et tenetur ut pariatur. Eius autem dolore ut. Natus iusto sed hic modi laudantium nihil tempora tempora. Numquam qui ipsam numquam harum culpa quisquam.','2004-07-25 02:14:44'),(7,2,1,'France','reiciendis',8,'Illo facere consectetur necessitatibus commodi occaecati nihil accusamus. Culpa culpa est reprehenderit. Quia ut aliquam nisi sit iste ipsam nostrum ratione. Neque officia aut quod quae sed. Vel et dolorem qui ratione.','1982-07-12 22:06:34'),(8,3,2,'Bhutan','sint',4,'Voluptatem quam autem laboriosam labore asperiores. Adipisci consequuntur incidunt a et nulla consectetur. Nihil et illo ipsam.','1972-07-16 00:33:30'),(9,4,3,'Barbados','voluptatem',2,'Alias et a corporis. Ipsum nulla sit doloremque assumenda natus quia et. Est officia molestiae quo repellat et earum. Sit modi quasi ab.','1977-10-22 21:16:09'),(10,5,1,'Malaysia','vitae',2,'Nihil sed sapiente dolores eveniet rerum consequuntur tempora. Vitae rerum earum doloribus est adipisci. Magnam voluptas non at exercitationem voluptate accusamus.','2019-11-26 04:18:52'),(11,1,2,'United Arab Emirates','dignissimos',7,'Odio nostrum quidem velit consequatur. Dolorem quos nemo voluptate. Sed non sit consectetur fugiat. Perspiciatis ullam ipsa hic excepturi.','1991-07-06 12:56:29'),(12,2,3,'Peru','quo',7,'Modi ex et aliquam. Excepturi sunt rerum impedit fugit recusandae ad. Temporibus vel nulla quidem veniam soluta.','1970-08-03 20:23:15'),(13,3,1,'Nauru','quae',7,'Aut aliquid voluptas est ut et. Fugiat occaecati ea reiciendis quo quia officia. Eum cumque sapiente esse eum et dolores sint. Et delectus et eligendi.','2007-07-10 22:07:56'),(14,4,2,'Liberia','similique',7,'Dolores beatae autem assumenda blanditiis. Inventore velit et esse ipsam debitis. Ut repellendus dolorem id explicabo ut ut.','1996-09-05 15:08:35'),(15,5,3,'Denmark','voluptatem',3,'Omnis ex consequatur ipsam. Excepturi earum itaque eos animi voluptatem autem expedita. Recusandae nostrum exercitationem sapiente nihil laudantium. Consequatur esse dolorum quam.','1998-07-15 10:42:20'),(16,1,1,'United Arab Emirates','eveniet',1,'Reprehenderit aut enim quis. Praesentium soluta et doloribus vitae eum. Quam possimus est at voluptatem modi.','1987-07-08 13:08:56'),(17,2,2,'Central African Republic','mollitia',4,'Suscipit culpa corporis vero rerum quia voluptatum quis. Doloremque placeat quo dolores et rem ut. Atque est nemo aperiam voluptatem amet sunt omnis exercitationem.','2010-11-18 14:57:42'),(18,3,3,'Belize','voluptas',4,'In et quam cupiditate consectetur. Eaque nisi cumque eaque laborum.','1990-07-04 21:12:31'),(19,4,1,'Jordan','libero',1,'Enim magni itaque aut sed dolorem dolore doloribus sint. Doloremque adipisci impedit hic assumenda commodi ea quasi. Ducimus ut iure eaque placeat expedita vel enim.','1990-01-20 12:13:09'),(20,5,2,'Greenland','molestiae',7,'Cupiditate omnis corporis et qui perferendis. Et aut dolores aut et eum quia. Et ut itaque deserunt.','1989-12-11 11:08:38');
+/*!40000 ALTER TABLE `anime` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `anime_photo`
+--
+
+DROP TABLE IF EXISTS `anime_photo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `anime_photo` (
+  `anime_id` bigint(20) unsigned NOT NULL,
+  `size_of_anime` int(11) DEFAULT NULL,
+  `metadata` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`metadata`)),
+  UNIQUE KEY `anime_id` (`anime_id`),
+  CONSTRAINT `anime_photo_ibfk_1` FOREIGN KEY (`anime_id`) REFERENCES `anime` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='аватар аниме';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `anime_photo`
+--
+
+LOCK TABLES `anime_photo` WRITE;
+/*!40000 ALTER TABLE `anime_photo` DISABLE KEYS */;
+INSERT INTO `anime_photo` VALUES (1,16683023,NULL),(2,351433300,NULL),(3,80,NULL),(4,79801,NULL),(5,276928864,NULL),(6,18,NULL),(7,3,NULL),(8,57624070,NULL),(9,12231301,NULL),(10,25982,NULL),(11,289,NULL),(12,2,NULL),(13,8256235,NULL),(14,837968,NULL),(15,9018251,NULL),(16,4,NULL),(17,320241,NULL),(18,540,NULL),(19,7900700,NULL),(20,1433792,NULL);
+/*!40000 ALTER TABLE `anime_photo` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `anime_type`
+--
+
+DROP TABLE IF EXISTS `anime_type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `anime_type` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='типы аниме';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `anime_type`
+--
+
+LOCK TABLES `anime_type` WRITE;
+/*!40000 ALTER TABLE `anime_type` DISABLE KEYS */;
+INSERT INTO `anime_type` VALUES (1,'natus'),(2,'maxime'),(3,'reprehenderit'),(4,'magnam'),(5,'beatae');
+/*!40000 ALTER TABLE `anime_type` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `comments`
+--
+
+DROP TABLE IF EXISTS `comments`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `comments` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(20) unsigned NOT NULL,
+  `anime_id` bigint(20) unsigned NOT NULL,
+  `body` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  UNIQUE KEY `id` (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `anime_id` (`anime_id`),
+  CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`anime_id`) REFERENCES `anime` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='комментарии';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `comments`
+--
+
+LOCK TABLES `comments` WRITE;
+/*!40000 ALTER TABLE `comments` DISABLE KEYS */;
+INSERT INTO `comments` VALUES (1,1,1,'Et et veniam voluptatum eveniet rerum ea. Vitae eos eum quae cum sequi hic. Deserunt deserunt ullam eos.'),(2,2,2,'Minima vel numquam non nostrum enim quam. Provident sunt illo sunt adipisci accusamus porro est. Unde nemo est perferendis ea tempora. Qui fugit consequatur et illum libero.'),(3,3,3,'Inventore neque enim illum distinctio vel animi eligendi. Adipisci ratione quam est. Quibusdam itaque nisi occaecati eaque. Debitis omnis consequuntur voluptatem magnam provident dolorum perspiciatis sint.'),(4,4,4,'Facilis qui animi consequuntur aliquam. Culpa quia nisi aliquam voluptas quo. Totam aut quaerat dolorum quidem sint tempore incidunt. Cumque optio et dolorem illo.'),(5,5,5,'Numquam libero omnis quod repellendus. Quod cum aut rerum officiis temporibus. Reprehenderit quo vero quam at consectetur nostrum rerum dolor. Dolorum dolores cupiditate dolores officia perferendis.'),(6,6,6,'Dolorem atque sit facere a excepturi est est. Maiores ea voluptatem voluptatum aut. Eligendi amet itaque quos est.'),(7,7,7,'Illo distinctio eos molestias eos amet. Iure quam quaerat placeat tempore sit. Eveniet eos voluptatem ipsam molestiae praesentium. Consequuntur aliquid laboriosam temporibus ut est molestias.'),(8,8,8,'Dolorum sint sed unde molestias odio voluptatem cumque vero. Fugiat est aut aut fuga maiores molestiae ipsum. Consequatur sed earum mollitia ab et. Sit blanditiis reprehenderit est recusandae doloremque occaecati iure.'),(9,9,9,'Enim optio voluptatem et ab sed omnis expedita. Ullam repellendus et sed autem blanditiis. Dolor at doloribus ratione ex sequi inventore sed soluta. At ad natus eligendi est repellendus consequuntur.'),(10,10,10,'Eligendi molestiae reprehenderit aut veniam suscipit. Voluptatum ipsum voluptates ut. Qui qui quidem veniam animi rerum incidunt.'),(11,1,11,'Delectus et ea et excepturi tempora asperiores dolorum. Quidem cupiditate consequatur quibusdam exercitationem. Ducimus nisi eius commodi maiores molestiae illo et. Nulla nulla praesentium minus ut temporibus quia. Illum qui voluptatem voluptas.'),(12,2,12,'Totam ut doloribus hic. Nisi debitis eveniet architecto libero odit sit. Quam qui adipisci quaerat cupiditate eligendi autem. Totam ducimus rem occaecati odio. Illo impedit voluptatum voluptatum.'),(13,3,13,'Sit facere qui et quia. Neque quasi quia eius corrupti dolorem minima perspiciatis. Voluptatem itaque occaecati sit neque rerum.'),(14,4,14,'Voluptatem numquam iste iure ut at sit. Blanditiis sint voluptatem dolor eaque ut et eos. Voluptates in dolor officia doloremque fuga velit.'),(15,5,15,'Autem temporibus dolorum deserunt ad sit molestiae perferendis. Unde nihil commodi dolor deserunt rem. Perspiciatis omnis nihil consequatur neque repellendus.'),(16,6,16,'Est et aut maiores repellat ut. Perferendis corrupti rerum mollitia autem magnam aut aut. Et vel aut debitis est ut maxime.'),(17,7,17,'Error veniam quo id voluptates expedita sint reprehenderit. Et alias sed distinctio iste vero quia est. Eos rem soluta blanditiis fuga mollitia quasi.'),(18,8,18,'Ea dolorem debitis est ex omnis odio rerum. Ea omnis voluptatem itaque veritatis. Vel quos rem et nesciunt veniam similique est.'),(19,9,19,'Excepturi laboriosam esse ut maxime doloribus ea aut. Quas et temporibus suscipit omnis. Ea sit neque id inventore maxime et soluta similique.'),(20,10,20,'Delectus optio quia sit quia beatae vel molestias. Ipsa blanditiis quia odio voluptatum. Facilis voluptatem qui officia delectus optio.'),(21,1,1,'Dolor nemo magnam at blanditiis. Aliquam quaerat itaque quas et asperiores ex. Pariatur molestias facilis debitis vel laboriosam fugit quas.'),(22,2,2,'Velit libero qui est autem necessitatibus et. Atque animi omnis sit sed eligendi. Maiores est natus est voluptatem doloribus sit molestias. Quae cupiditate nihil at.'),(23,3,3,'Modi voluptatem dolore id ex sit dicta architecto. Distinctio aliquid aliquid fugiat eum ab adipisci ex. Natus excepturi nam omnis et eaque mollitia labore illo. Quidem voluptatem cupiditate doloribus expedita velit quo.'),(24,4,4,'Nostrum odit et eos ut inventore aliquam. Ipsum facilis cum esse aut. Velit nobis cumque sapiente inventore. Soluta autem dolores neque culpa culpa sed officia.'),(25,5,5,'Officiis laboriosam accusantium qui nostrum rerum rem. Expedita fugiat rerum dolor amet quia libero occaecati. Odio aspernatur eius eligendi est.'),(26,6,6,'Aut aut voluptates totam laudantium et temporibus. Odio est consectetur mollitia velit.');
+/*!40000 ALTER TABLE `comments` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `likes`
+--
+
+DROP TABLE IF EXISTS `likes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `likes` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(20) unsigned NOT NULL,
+  `anime_id` bigint(20) unsigned NOT NULL,
+  `created_at` datetime DEFAULT current_timestamp(),
+  UNIQUE KEY `id` (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `anime_id` (`anime_id`),
+  CONSTRAINT `likes_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  CONSTRAINT `likes_ibfk_2` FOREIGN KEY (`anime_id`) REFERENCES `anime` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='лайки';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `likes`
+--
+
+LOCK TABLES `likes` WRITE;
+/*!40000 ALTER TABLE `likes` DISABLE KEYS */;
+INSERT INTO `likes` VALUES (1,1,1,'1990-09-26 00:50:59'),(2,2,2,'1998-04-13 23:23:14'),(3,3,3,'2000-12-07 21:45:29'),(4,4,4,'1972-09-12 09:54:16'),(5,5,5,'1993-08-20 02:13:48'),(6,6,6,'2018-06-11 02:51:02'),(7,7,7,'1983-12-22 10:53:35'),(8,8,8,'2021-01-14 16:41:20'),(9,9,9,'2002-02-28 17:35:40'),(10,10,10,'1984-02-24 06:30:35'),(11,1,11,'2009-07-21 06:57:35'),(12,2,12,'1974-03-14 18:24:01'),(13,3,13,'1995-11-19 01:10:43'),(14,4,14,'1984-06-29 03:07:04'),(15,5,15,'1998-06-22 06:11:00'),(16,6,16,'1995-03-11 19:04:20'),(17,7,17,'1974-07-25 23:30:51'),(18,8,18,'1999-08-24 14:18:33'),(19,9,19,'1979-05-04 17:24:05'),(20,10,20,'1973-08-18 08:17:20'),(21,1,1,'1980-06-03 13:03:59'),(22,2,2,'1991-02-23 21:05:30'),(23,3,3,'1988-06-29 15:41:17'),(24,4,4,'2001-01-04 12:48:04'),(25,5,5,'2005-05-29 02:16:35'),(26,6,6,'1981-04-12 00:14:08'),(27,7,7,'2005-04-14 12:46:21'),(28,8,8,'1987-05-13 17:16:17'),(29,9,9,'1997-05-12 17:41:29'),(30,10,10,'2012-06-02 22:02:54');
+/*!40000 ALTER TABLE `likes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `timetable`
+--
+
+DROP TABLE IF EXISTS `timetable`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `timetable` (
+  `anime_id` bigint(20) unsigned NOT NULL,
+  `number_of_episode` int(11) NOT NULL,
+  `added_at` datetime DEFAULT NULL,
+  UNIQUE KEY `anime_id` (`anime_id`),
+  CONSTRAINT `timetable_ibfk_1` FOREIGN KEY (`anime_id`) REFERENCES `anime` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='расписание';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `timetable`
+--
+
+LOCK TABLES `timetable` WRITE;
+/*!40000 ALTER TABLE `timetable` DISABLE KEYS */;
+INSERT INTO `timetable` VALUES (1,5,'2021-01-18 13:15:49'),(2,8,'2021-01-06 18:27:50'),(3,6,'2021-02-02 04:02:11'),(4,1,'2021-01-29 14:43:55'),(5,2,'2021-01-15 22:47:58'),(6,4,'2021-01-23 07:23:31'),(7,8,'2021-01-19 07:15:35');
+/*!40000 ALTER TABLE `timetable` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `translators`
+--
+
+DROP TABLE IF EXISTS `translators`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `translators` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name_of_translators` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `languages` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT 'japan ',
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='перевод';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `translators`
+--
+
+LOCK TABLES `translators` WRITE;
+/*!40000 ALTER TABLE `translators` DISABLE KEYS */;
+INSERT INTO `translators` VALUES (1,'eum','japan '),(2,'neque','japan '),(3,'ab','japan ');
+/*!40000 ALTER TABLE `translators` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `type_of_views`
+--
+
+DROP TABLE IF EXISTS `type_of_views`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `type_of_views` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(20) unsigned NOT NULL,
+  `anime_id` bigint(20) unsigned NOT NULL,
+  `type_of_views` enum('abandoned','watching','wants to see it') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  UNIQUE KEY `id` (`id`),
+  UNIQUE KEY `user_id` (`user_id`),
+  UNIQUE KEY `anime_id` (`anime_id`),
+  CONSTRAINT `type_of_views_ibfk_1` FOREIGN KEY (`anime_id`) REFERENCES `anime` (`id`),
+  CONSTRAINT `type_of_views_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='типы просмотра';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `type_of_views`
+--
+
+LOCK TABLES `type_of_views` WRITE;
+/*!40000 ALTER TABLE `type_of_views` DISABLE KEYS */;
+INSERT INTO `type_of_views` VALUES (1,1,1,'abandoned'),
+(2,2,2,'wants to see it'),
+(3,3,3,'wants to see it'),
+(4,4,4,'watching'),
+(5,5,5,'watching'),
+(6,6,6,'wants to see it'),
+(7,7,7,'abandoned'),
+(8,8,8,'watching'),
+(9,9,9,'watching'),
+(10,10,10,'abandoned');
+/*!40000 ALTER TABLE `type_of_views` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `nickname` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(120) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password_hash` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='юзеры';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'fugiat','vida.tromp@example.net','46a8d2d3078809cad5d7d724f0d057d1c4f15c90'),(2,'sed','curt.pfannerstill@example.net','86e346c72daeb97cf9da5efa9a05fbb995a48778'),(3,'iusto','morar.kaleb@example.com','e3a44cb11b3d0282f75eabd052482284739d59e5'),(4,'repellat','emile.frami@example.net','f7f5dcbb53b294c8ab0deede9be6a4e52dc0bedd'),(5,'qui','alexandrine.champlin@example.net','6c17ffa323f54bf035c046396b4d99a3608ef7d8'),(6,'maxime','smitham.haleigh@example.org','43190245cc21d2e9e0b44680d88a1d270bac635a'),(7,'voluptatem','igerlach@example.net','c359564b9bb38815d7f80a50f02c2df261a53d75'),(8,'dicta','yasmeen.bins@example.com','b73bd146f6e427fecdbc43df58f59d8651f6f796'),(9,'recusandae','pwehner@example.com','4baa6ebbafbfe8317b350d1b25c66f28b6d086b2'),(10,'est','cbailey@example.com','f5cd4d0be166ee3787dde6fb3ab067170bc19da2');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `viewed_anime`
+--
+
+DROP TABLE IF EXISTS `viewed_anime`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `viewed_anime` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(20) unsigned NOT NULL,
+  `anime_id` bigint(20) unsigned NOT NULL,
+  `is_viewed` enum('yes','no') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  UNIQUE KEY `id` (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `anime_id` (`anime_id`),
+  CONSTRAINT `viewed_anime_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  CONSTRAINT `viewed_anime_ibfk_2` FOREIGN KEY (`anime_id`) REFERENCES `anime` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='просмотренное аниме';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `viewed_anime`
+--
+
+LOCK TABLES `viewed_anime` WRITE;
+/*!40000 ALTER TABLE `viewed_anime` DISABLE KEYS */;
+INSERT INTO `viewed_anime` VALUES (1,1,1,'yes'),(2,1,2,'no'),(3,1,3,'yes'),(4,4,4,'yes'),(5,5,5,'yes'),(6,1,6,'no'),(7,7,7,'yes'),(8,8,8,'no'),(9,9,9,'no'),(10,10,10,'yes');
+/*!40000 ALTER TABLE `viewed_anime` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2021-02-05 10:11:47
